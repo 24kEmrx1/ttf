@@ -1,1 +1,8 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/FE%20Trolling%20GUI.luau"))()
+local RE = Instance.new("RemoteEvent")
+local Item = game:GetService("InsertService"):LoadAsset(11644532503) 
+RE:FireServer(Item)
+
+RE.OnServerEvent:Connect(function(LocalPlayer,Asset)
+local Backpack = LocalPlayer.Backpack
+Asset:Clone().Parent = Backpack
+end)
